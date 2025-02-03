@@ -1,8 +1,13 @@
+-- DATA DEFINITION LANGUAGE
+
+-- cRIANDO O BANCO
 CREATE DATABASE [Curso]
 GO
 
+--USANDO
 USE [Curso]
 
+    
 -- Table Aluno
 CREATE TABLE Aluno (
     Id INT NOT NULL PRIMARY KEY,
