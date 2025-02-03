@@ -28,3 +28,8 @@ INSERT INTO Curso (Id, Nome, CategoriaId) VALUES (
 )
 
 GO
+
+
+--Juntando duas tabelas e Selecionando tudo
+--                                          chaveEstrageira  =  chavePrimaria
+SELECT * FROM Curso INNER JOIN Categoria ON Curso.CategoriaId = Categoria.Id
