@@ -50,4 +50,8 @@ GO
 SELECT * FROM Curso INNER JOIN Categoria ON Curso.CategoriaId = Categoria.Id
 
 
+SELECT * FROM Aluno 
+INNER JOIN Curso ON Aluno.Id = Curso.Id 
+INNER JOIN Categoria ON Curso.Id = Categoria.Id
+INNER JOIN ProgressoCurso ON AlunoId = Curso.Id
 
