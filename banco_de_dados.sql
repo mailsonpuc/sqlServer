@@ -76,3 +76,20 @@ CREATE TABLE base_de_dados.dbo.users_roles (
 ALTER TABLE base_de_dados.dbo.users_roles ADD CONSTRAINT users_roles_roles_FK FOREIGN KEY (role_id) REFERENCES base_de_dados.dbo.roles(id) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE base_de_dados.dbo.users_roles ADD CONSTRAINT users_roles_users_FK FOREIGN KEY (user_id) REFERENCES base_de_dados.dbo.users(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
+
+
+
+-- TRIGGER de atualiza o updated_at automaticamente
+CREATE OR ALTER TRIGGER trg_UpdateTimestamp
+ON base_de_dados.dbo.users
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE u
+    SET updated_at = SYSUTCDATETIME()
+    FROM base_de_dados.dbo.users u
+    INNER JOIN inserted i ON u.id = i.id;
+END;
+
