@@ -50,11 +50,11 @@ CREATE TABLE base_de_dados.dbo.users (
 	password_hash varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	created_at datetime DEFAULT getdate() NOT NULL,
 	updated_at datetime NOT NULL,
+	Salary decimal(15,2) NULL,
 	CONSTRAINT users_pk PRIMARY KEY (id),
 	CONSTRAINT users_unique UNIQUE (id),
 	CONSTRAINT users_unique_email UNIQUE (email)
 );
-
 
 
 
